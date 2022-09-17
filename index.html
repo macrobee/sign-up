@@ -6,61 +6,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <div>
-        <h1>Bike Life</h1>
+    <div class="left-space">
+        <div class="photo-banner">
+            <h1>The Bike Life</h1>
+            <!-- <img src="wheel.png" alt="Photo of a bicycle wheel" width="100px"> -->
+        </div>
+        <p class="photo-credits">Photo by Yours Truly on her camera</p>
     </div>
-    <p>Photo by Yours Truly on her camera</p>
-    <div class="sign-up-form">
-        <p>This is a not real service! Sign up here for fun but go out there and get a real bike! It will change your
-            life. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam hic, dolores voluptas deleniti enim
-            et quis debitis dolorum cupiditate necessitatibus autem doloremque, excepturi voluptate explicabo libero
-            nemo, minus dignissimos ex.</p>
-        <p>You know you want to.</p>
 
-        <form action="#" method="post">
-            <fieldset>
-                <legend>Your Name</legend>
-                <label for="first-name">First</label>
-                <input type="text" name="first-name" id="first-name">
-                <label for="last-name">Last</label>
-                <input type="text" name="last-name" id="last-name">
-            </fieldset>
-            <fieldset>
-                <legend>Contact information</legend>
-                <label for="email">Email</label>
-                <input type="text" name="email" id="email">
-                <label for="phone">Phone Number</label>
-                <input type="text" name="phone" id="phone">
-            </fieldset>
-            <fieldset>
-                <legend>Account information</legend>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-                <label for="confirm">Confirm password</label>
-                <input type="password" name="confirm" id="confirm">
-            </fieldset>
-            <fieldset>
-                <legend>Select your jersey fit</legend>
-                <label for="regular">Regular</label>
-                <input type="radio" name="jersey" id="regular">
-                <label for="relaxed">Relaxed</label>
-                <input type="radio" name="jersey" id="relaxed">
-                <label for="race">Race</label>
-                <input type="radio" name="jersey" id="race">
-            </fieldset>
+    <div class="right-space">
+        <div class="sign-up-form">
 
-            <input type="radio" name="jersey" id="jersey">
-            <input type="checkbox" id="agree" name="agree" value="">
-            <label for="agree">I agree to the terms and condition (there are none)</label>
-            <button type="submit">Sign up</button>
-        </form>
+            <div class="form-info">
+                <p>This is a not real service! Sign up here for fun. Then get a bike. It will change
+                    your life. </p>
+            </div>
+            <form action="#" method="post">
+                <div class="form-row" id="top-row">
+                    <h2>Let's do this!</h2>
+                        <p class="form-text">indicates required field.</p>
+                </div>
+                    <fieldset class="user-information">
+                        <legend>Your Information</legend>
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label for="first-name">First Name</label>
+                                <input type="text" name="first-name" id="first-name" placeholder="FirstName" required>
+
+                            </div>
+                            <div class="form-item">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" name="last-name" id="last-name" placeholder="LastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label for="email">Email </label>
+                                <input type="text" name="email" id="email" placeholder="user@smail.com" required>
+
+                            </div>
+                            <div class="form-item">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" name="phone" id="phone" placeholder="XXX-XXX-XXXX">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-item">
+                                <label for="username">Username </label>
+                                <input type="text" name="username" id="username" required>
+                            </div>
+                            <div class="form-item">
+                                <label for="password">Password </label>
+                                <input type="password" name="password" id="password" required>
+
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-item confirm">
+                                <label for="confirm">Confirm password</label>
+                                <input type="password" name="confirm" id="confirm" required>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Select your jersey fit</legend>
+                        <label for="regular">Regular</label>
+                        <input type="radio" name="jersey" id="regular" checked>
+                        <label for="relaxed">Relaxed</label>
+                        <input type="radio" name="jersey" id="relaxed">
+                        <label for="race">Race</label>
+                        <input type="radio" name="jersey" id="race">
+                    </fieldset>
+
+                    <input type="checkbox" id="agree" name="agree" value="" required>
+                    <label for="agree">I agree to become a biker for life</label>
+                    <button type="submit">Sign up</button>
+            </form>
+        </div>
     </div>
 </body>
 

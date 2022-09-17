@@ -1,5 +1,243 @@
-body{
+:root {
+    --background-color: rgb(241, 242, 233);
+    --highlight-color: rgb(249, 249, 240);
+    --input-color: rgb(228, 230, 217);
+    --input-lighter: rgb(232, 234, 220);
+    --banner-text-color: rgb(33, 39, 20);
+    --form-text-color: rgb(42, 53, 20);
+    --clickable-color: rgb(93, 119, 74);
+    --button-hover-color: rgb(104, 133, 83);
+    --button-clicked-color: rgb(116, 148, 93);
+    --kufi-font: 'Reem Kufi Fun';
+}
+
+body {
     margin: 0;
     background-image: url(./bike.jpg);
     background-size: cover;
+    width: 100vw;
+    display: flex;
+    justify-items: stretch;
+    align-items: center;
+    font-family: 'Reem Kufi Fun', sans-serif;
+    color: (--text-color);
+}
+
+.left-space {
+    width: 45vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo-banner {
+    background-color: rgba(198, 178, 159, 0.4);
+    color: var(--banner-text-color);
+    font-size: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.photo-credits {
+    /* background-color: rgba(198, 178, 159, 0.4); */
+    color: var(--background-color);
+    position: absolute;
+    bottom: 0;
+}
+
+.right-space {
+    width: 55vw;
+    padding-top: 30px;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px;
+    color: var(--form-text-color);
+}
+
+.sign-up-form {
+    background-color: var(--background-color);
+    width: 85%;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 5px 7px 5px 3px rgba(68, 75, 66, 0.535);
+}
+#top-row{
+    padding: 0;
+}
+#top-row>p{
+    position: absolute;
+    top: 30%;
+    right: 15%;
+}
+#top-row>p::before{
+    content:"*";
+    color: red;
+}
+h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.form-text {
+    font-size: 1em;
+}
+
+form {
+    background-color: var(--highlight-color);
+    box-shadow: 5px 5px 7px 3px var(--input-color);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label[for="first-name"]::after,
+label[for="last-name"]::after,
+label[for="email"]::after,
+label[for="username"]::after,
+label[for="password"]::after,
+label[for="agree"]::after {
+    content:'*';
+    color: red;
+}
+
+label {
+    color: var(--form-text-color);
+    font-size: 1em;
+}
+
+legend {
+    font-weight: 700;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-bottom: 10px;
+
+}
+
+.form-item {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.confirm {
+    width: 60%;
+}
+
+input,
+fieldset {
+    appearance: none;
+}
+
+fieldset {
+    border: none;
+    border-top: 1px solid var(--clickable-color);
+}
+
+.user-information {
+    display: grid;
+}
+
+input {
+    background-color: var(--input-color);
+    border: none;
+    border-bottom: 1px solid var(--clickable-color);
+    border-radius: 5px;
+    padding: 5px 10px;
+    width: 35%;
+    flex: 1;
+    font-family: var(--kufi-font), sans-serif;
+    box-sizing: border-box;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:hover {
+    background-color: var(--input-lighter);
+}
+
+input:user-invalid {
+    border: 2px solid rgb(201, 47, 47);
+}
+
+input::placeholder {
+    color: var(--clickable-color);
+    font-style: var(--kufi-font);
+}
+
+input[type="radio"] {
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    border-radius: 50%;
+}
+
+input[type="checkbox"] {
+    height: 15px;
+    width: 15px;
+    padding: 0;
+    border-radius: 3px;
+    display: inline-block;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--form-control-color);
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid var(--clickable-color);
+    outline-offset: max(2px, 0.15em);
+}
+
+
+input:focus {
+    outline: none;
+    border: 2px solid var(--clickable-color);
+}
+
+button {
+    display: block;
+    margin: auto;
+    padding: 7px 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: var(--clickable-color);
+    color: white;
+    font-size: 1.1em;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    font-weight: 700;
+    padding: 7px 14px;
+}
+
+button:focus {
+    background-color: var(--button-clicked-color);
 }
