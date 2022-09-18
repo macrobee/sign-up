@@ -373,9 +373,18 @@ button:disabled {
     }
 }
 @media screen and (max-width: 430px){
+    .photo-banner{
+        padding-bottom: 10px;
+    }
     .top-row{
         flex-direction:column;
     }
+    .sign-up-form{
+        border-radius:20px;
+    }
+   .right-space{
+    width:95%;
+   }
     .form-row{
         flex-direction:column;
         gap:0;
