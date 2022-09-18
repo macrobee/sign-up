@@ -38,18 +38,29 @@ body {
     font-size: 2rem;
     text-align: center;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+img {
+    height: 100px;
+    width: 80px;
 }
 
 .photo-credits {
     /* background-color: rgba(198, 178, 159, 0.4); */
     color: var(--background-color);
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
 .right-space {
     width: 55vw;
-    padding-top: 30px;
+    display:flex;
+    justify-content: center;
+    align-items:flex-end;
 }
 
 p {
@@ -57,26 +68,39 @@ p {
     margin: 10px;
     color: var(--form-text-color);
 }
-
+.form-info{
+    width: 65%;
+}
 .sign-up-form {
     background-color: var(--background-color);
-    width: 85%;
-    padding: 30px 20px;
-    border-radius: 10px;
-    box-shadow: 5px 7px 5px 3px rgba(68, 75, 66, 0.535);
+    width: 100%;
+    padding: 50px 20px;
+    box-shadow: -5px 7px 3px 3px rgba(68, 75, 66, 0.3);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
-#top-row{
+
+#top-row {
     padding: 0;
+    display:flex;
+    justify-content: space-between;
 }
-#top-row>p{
-    position: absolute;
-    top: 30%;
-    right: 15%;
+
+#top-row>p {
+    margin:0;
+    align-self: flex-end;
+    /* position: absolute;
+    top: 32%;
+    right: 10%; */
 }
-#top-row>p::before{
-    content:"*";
+
+#top-row>p::before {
+    content: "*";
     color: red;
 }
+
 h2 {
     font-size: 1.2em;
     margin: 0;
@@ -91,6 +115,9 @@ form {
     box-shadow: 5px 5px 7px 3px var(--input-color);
     padding: 20px;
     border-radius: 10px;
+    margin: auto;
+    width: 70%;
+    /* align-self: center; */
 }
 
 label[for="first-name"]::after,
@@ -98,14 +125,16 @@ label[for="last-name"]::after,
 label[for="email"]::after,
 label[for="username"]::after,
 label[for="password"]::after,
+label[for="confirm"]::after,
 label[for="agree"]::after {
-    content:'*';
+    content: '*';
     color: red;
 }
 
 label {
     color: var(--form-text-color);
     font-size: 1em;
+    margin-bottom: -3px;
 }
 
 legend {
@@ -115,32 +144,39 @@ legend {
 .form-row {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 10px;
     padding-bottom: 10px;
 
+}
+.form-row:nth-last-child(1){
+    width: 100%;
+    padding-bottom: 0;
 }
 
 .form-item {
     display: flex;
-    width: 50%;
-    justify-content: space-between;
-    gap: 20px;
-    align-items: center;
+    flex-direction: column;
+    width: 45%;
+    justify-content: center;
+    align-items: flex-start;
+
 
 }
 
 .confirm {
-    width: 60%;
+    width: 100%;
 }
-
-input,
-fieldset {
-    appearance: none;
+#confirm{
+    width: 40%;
 }
+/* .error-text{
+    width: 33%;
+} */
 
 fieldset {
     border: none;
     border-top: 1px solid var(--clickable-color);
+    margin: auto;
 }
 
 .user-information {
@@ -153,7 +189,7 @@ input {
     border-bottom: 1px solid var(--clickable-color);
     border-radius: 5px;
     padding: 5px 10px;
-    width: 35%;
+    width: 85%;
     flex: 1;
     font-family: var(--kufi-font), sans-serif;
     box-sizing: border-box;
@@ -174,51 +210,92 @@ input:user-invalid {
     border: 2px solid rgb(201, 47, 47);
 }
 
-input::placeholder {
+input[type="text"]::placeholder {
     color: var(--clickable-color);
     font-style: var(--kufi-font);
 }
 
-input[type="radio"] {
-    height: 15px;
-    width: 15px;
-    padding: 0;
-    border-radius: 50%;
-}
-
+input[type="radio"],
 input[type="checkbox"] {
-    height: 15px;
-    width: 15px;
+    appearance: none;
+    -webkit-appearance: none;
+    height: 1.15em;
+    width: 1.15em;
+    border: 1px solid var(--clickable-color);
     padding: 0;
-    border-radius: 3px;
-    display: inline-block;
+    background-color: var(--input-color);
+    transform: translateY(-0.075em);
+    display: grid;
     place-content: center;
 }
 
+input[type="checkbox"] {
+    border-radius: 3px;
+    display: grid;
+    place-content: center;
+}
+
+input[type="radio"] {
+    border-radius: 50%;
+}
+
+input[type="radio"]::before {
+    border-radius: 50%;
+}
+
+input[type="checkbox"]::before {
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+input[type="radio"]::before,
 input[type="checkbox"]::before {
     content: "";
     width: 0.65em;
     height: 0.65em;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em var(--form-control-color);
-    transform-origin: bottom left;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    box-shadow: inset 1em 1em var(--clickable-color);
+    background-color: var(--clickable-color);
 }
 
+input[type="radio"]:checked::before,
 input[type="checkbox"]:checked::before {
     transform: scale(1);
-}
-
-input[type="checkbox"]:focus {
-    outline: max(2px, 0.15em) solid var(--clickable-color);
-    outline-offset: max(2px, 0.15em);
+    /* background-color: var(--clickable-color); */
 }
 
 
 input:focus {
-    outline: none;
-    border: 2px solid var(--clickable-color);
+    /* outline: none; */
+    /* border: 2px solid var(--clickable-color); */
+    outline: max(2px, 0.15em) solid var(--clickable-color);
+    /* outline-offset: max(1px, 0.15em); */
+}
+
+.radio-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.radio-choice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.agree-to-terms {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.error {
+    color: red;
+    font-size: 0.8em;
+    margin:0;
+    margin-top: -2px;
+    
 }
 
 button {
@@ -240,4 +317,80 @@ button:hover {
 
 button:focus {
     background-color: var(--button-clicked-color);
+}
+
+button:disabled {
+    background-color: var(--input-color);
+}
+
+@media screen and (max-width:900px){
+    .photo-banner{
+        flex-direction:column;
+        gap: 0;
+    }
+    h1{
+        margin:0;
+    }
+    form{
+        width: 90%;
+        margin:0;
+    }
+}
+@media screen and (max-width: 750px){
+    .form-info{
+        width:80%;
+    }
+}
+@media screen and (max-width:675px){
+    body{
+        flex-direction:column;
+    }
+    .left-space{
+        width:100%;
+        height:50vh;
+    }
+    .photo-banner{
+        flex-direction:row;
+    }
+    .photo-credits{
+        position:relative;
+        color:var(--input-color);
+    }
+    .right-space{
+        width:85%;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .photo-banner{
+        flex-direction:column;
+    }
+    .form-info{
+        width:90%;
+    }
+    .photo-credits{
+        font-size:0.8em;
+    }
+}
+@media screen and (max-width: 430px){
+    .top-row{
+        flex-direction:column;
+    }
+    .form-row{
+        flex-direction:column;
+        gap:0;
+    }
+    .form-item{
+        width: 80%;
+    }
+    #confirm{
+        width:85%;
+    }
+    .radio-row{
+        flex-direction: column;
+        gap:10px;
+    }
+    .radio-choice{
+        flex-direction:row;
+    }
 }

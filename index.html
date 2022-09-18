@@ -17,9 +17,9 @@
     <div class="left-space">
         <div class="photo-banner">
             <h1>The Bike Life</h1>
-            <!-- <img src="wheel.png" alt="Photo of a bicycle wheel" width="100px"> -->
+            <img src="./odin.png" alt="The Odin Project logo" width="100px">
         </div>
-        <p class="photo-credits">Photo by Yours Truly on her camera</p>
+        <p class="photo-credits">Photo by Yours Truly on her phone</p>
     </div>
 
     <div class="right-space">
@@ -32,67 +32,84 @@
             <form action="#" method="post">
                 <div class="form-row" id="top-row">
                     <h2>Let's do this!</h2>
-                        <p class="form-text">indicates required field.</p>
+                    <p class="form-text">indicates required field.</p>
                 </div>
-                    <fieldset class="user-information">
-                        <legend>Your Information</legend>
-                        <div class="form-row">
-                            <div class="form-item">
-                                <label for="first-name">First Name</label>
-                                <input type="text" name="first-name" id="first-name" placeholder="FirstName" required>
+                <fieldset class="user-information">
+                    <legend>Your Information</legend>
+                    <div class="form-row">
+                        <div class="form-item">
+                            <label for="first-name">First Name</label>
+                            <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
 
-                            </div>
-                            <div class="form-item">
-                                <label for="last-name">Last Name</label>
-                                <input type="text" name="last-name" id="last-name" placeholder="LastName" required>
-                            </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-item">
-                                <label for="email">Email </label>
-                                <input type="text" name="email" id="email" placeholder="user@smail.com" required>
-
-                            </div>
-                            <div class="form-item">
-                                <label for="phone">Phone Number</label>
-                                <input type="text" name="phone" id="phone" placeholder="XXX-XXX-XXXX">
-                            </div>
+                        <div class="form-item">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
                         </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-item">
+                            <label for="email">Email </label>
+                            <input type="email" name="email" id="email" placeholder="user@smail.com" required>
 
-                        <div class="form-row">
-                            <div class="form-item">
-                                <label for="username">Username </label>
-                                <input type="text" name="username" id="username" required>
-                            </div>
-                            <div class="form-item">
-                                <label for="password">Password </label>
-                                <input type="password" name="password" id="password" required>
-
-                            </div>
                         </div>
-                        <div class="form-row">
-                            <div class="form-item confirm">
-                                <label for="confirm">Confirm password</label>
-                                <input type="password" name="confirm" id="confirm" required>
-                            </div>
+                        <div class="form-item">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" name="phone" id="phone" placeholder="XXX-XXX-XXXX">
                         </div>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Select your jersey fit</legend>
-                        <label for="regular">Regular</label>
-                        <input type="radio" name="jersey" id="regular" checked>
-                        <label for="relaxed">Relaxed</label>
-                        <input type="radio" name="jersey" id="relaxed">
-                        <label for="race">Race</label>
-                        <input type="radio" name="jersey" id="race">
-                    </fieldset>
+                    </div>
 
-                    <input type="checkbox" id="agree" name="agree" value="" required>
-                    <label for="agree">I agree to become a biker for life</label>
-                    <button type="submit">Sign up</button>
+                    <div class="form-row">
+                        <div class="form-item">
+                            <label for="username">Username </label>
+                            <input type="text" name="username" id="username" minlength="8" maxlength="20" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="password">Password </label>
+                            <input type="password" name="password" id="password" minlength="8" required>
+
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-item confirm" id="confirm-password">
+                            <label for="confirm">Confirm password</label>
+                            <input type="password" name="confirm" id="confirm" required>
+                        <div class="error-message"></div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Select your jersey fit</legend>
+                    <div class="radio-row">
+                        <div class="radio-choice">
+                            <label for="regular">Regular</label>
+                            <div class="radio-button"><input type="radio" name="jersey" id="regular" checked></div>
+
+                        </div>
+                        <div class="radio-choice">
+                            <label for="relaxed">Relaxed</label>
+                            <div class="radio-button"><input type="radio" name="jersey" id="relaxed"></div>
+
+                        </div>
+                        <div class="radio-choice">
+                            <label for="race">Race</label>
+                            <div class="radio-button"><input type="radio" name="jersey" id="race"></div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="agree-to-terms">
+                    <div>
+                        <input type="checkbox" id="agree" name="agree" value="agree" required>
+                    </div> <label for="agree">I
+                        agree to become a biker for life</label>
+
+                </div>
+                <button type="submit">Sign up</button>
             </form>
         </div>
     </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
