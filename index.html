@@ -29,7 +29,8 @@
                 <p>This is a not real service! Sign up here for fun. Then get a bike. It will change
                     your life. </p>
             </div>
-            <form action="#" method="post">
+            <!-- <button id="test">test validation</button> -->
+            <form action="#" method="post" novalidate>
                 <div class="form-row" id="top-row">
                     <h2>Let's do this!</h2>
                     <p class="form-text">indicates required field.</p>
@@ -40,22 +41,24 @@
                         <div class="form-item">
                             <label for="first-name">First Name</label>
                             <input type="text" name="first-name" id="first-name" placeholder="First Name" required>
-
+                            <span class="error first-name"></span>
                         </div>
                         <div class="form-item">
                             <label for="last-name">Last Name</label>
                             <input type="text" name="last-name" id="last-name" placeholder="Last Name" required>
+                            <span class="error last-name"></span>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-item">
                             <label for="email">Email </label>
                             <input type="email" name="email" id="email" placeholder="user@smail.com" required>
-
+                            <span class="error email"></span>
                         </div>
                         <div class="form-item">
                             <label for="phone">Phone Number</label>
-                            <input type="text" name="phone" id="phone" placeholder="XXX-XXX-XXXX">
+                            <input type="tel" name="phone" id="phone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="XXX-XXX-XXXX">
+                            <span class="error phone"></span>
                         </div>
                     </div>
 
@@ -63,11 +66,12 @@
                         <div class="form-item">
                             <label for="username">Username </label>
                             <input type="text" name="username" id="username" minlength="8" maxlength="20" required>
+                            <span class="error username"></span>
                         </div>
                         <div class="form-item">
                             <label for="password">Password </label>
-                            <input type="password" name="password" id="password" minlength="8" required>
-
+                            <input type="password" name="password" id="password" minlength="8" maxlength="20" required>
+                            <span class="error password"></span>
                         </div>
                     </div>
                     <div class="form-row">
